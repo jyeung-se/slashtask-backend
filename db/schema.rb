@@ -24,9 +24,8 @@ ActiveRecord::Schema.define(version: 2018_10_18_235838) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string "task_title"
-    t.string "task_description"
-    t.datetime "date_posted"
+    t.string "title"
+    t.string "description"
     t.datetime "date_completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
