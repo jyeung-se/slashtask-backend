@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_18_235838) do
+ActiveRecord::Schema.define(version: 2018_10_23_222706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "slashed_task_lists", force: :cascade do |t|
+    t.string "list_title"
+    t.integer "user_id"
+    t.integer "task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "slashed_tasks", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "task_lists", force: :cascade do |t|
     t.string "list_title"
@@ -26,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_10_18_235838) do
   create_table "tasks", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.datetime "date_posted"
     t.datetime "date_completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
