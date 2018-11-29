@@ -2,7 +2,8 @@ class Api::V1::TasksController < ApplicationController
   before_action :set_task, only: [:show,:update,:destroy]
 
   def index
-    tasks = Task.all
+    tasks = Task.all.order(:id)
+    # .order(:id) to sort by ascending ID order.
     render json: tasks, status: 200
   end
 
