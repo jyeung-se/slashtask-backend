@@ -1,14 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_name: MyString
+  username: MyString
   first_name: MyString
   last_name: MyString
   city: MyString
   state: MyString
 
 two:
-  user_name: MyString
+  username: MyString
   first_name: MyString
   last_name: MyString
   city: MyString

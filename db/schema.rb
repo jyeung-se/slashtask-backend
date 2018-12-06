@@ -27,19 +27,17 @@ ActiveRecord::Schema.define(version: 2018_10_18_235838) do
     t.string "description"
     t.boolean "slashed", default: false, null: false
     t.integer "task_list_id"
-    t.datetime "date_posted"
-    t.datetime "date_completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "user_name"
+    t.string "username"
+    t.string "password_digest"
     t.string "first_name"
     t.string "last_name"
     t.string "city"
     t.string "state"
-    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

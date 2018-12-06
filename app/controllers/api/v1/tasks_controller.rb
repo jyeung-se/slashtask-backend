@@ -2,14 +2,14 @@ class Api::V1::TasksController < ApplicationController
   before_action :set_task, only: [:show,:update,:destroy]
 
   def index
-    tasks = Task.all.order(:id)
+    @tasks = Task.all.order(:id)
     # .order(:id) to sort by ascending ID order.
-    render json: tasks, status: 200
+    render json: @tasks, status: 200
   end
 
   def create
-    task = Task.create(task_params)
-    render json: task, status: 201
+    @task = Task.create(task_params)
+    render json: @task, status: 201
   end
 
   def update
@@ -29,7 +29,7 @@ class Api::V1::TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:title, :description, :slashed, :task_list_id, :date_posted, :date_completed)
+    params.require(:task).permit(:title, :description, :slashed, :task_list_id)
   end
 
   def set_task
