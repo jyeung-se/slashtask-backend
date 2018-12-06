@@ -48,6 +48,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# For the use of ENV variables 
+gem "figaro"
+
 gem "jwt", "~> 2.1"
 
 gem "faker", "~> 1.9"
