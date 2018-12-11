@@ -1,6 +1,10 @@
 class Api::V1::TasksController < ApplicationController
   before_action :set_task, only: [:show,:update,:destroy]
 
+  skip_before_action :authorized, only: [:create]
+  # skip_before_action :authorized, only: [:index, :create]
+
+
   def index
     @tasks = Task.all.order(:id)
     # .order(:id) to sort by ascending ID order.
