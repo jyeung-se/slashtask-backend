@@ -1,11 +1,13 @@
 class Api::V1::UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
-  skip_before_action :authorized, only: [:create]
-  # skip_before_action :authorized, only: [:index, :create]
+
+  # skip_before_action :authorized, only: [:create]
+  skip_before_action :authorized, only: [:index, :create]
 
   def index
     @users = User.all
-    render json: @users, status: 200
+    # render json: @users, status: 200
+    render json: @users.to_json( { include: [ task_lists: { include: :tasks } ] } )
   end
 
   def profile

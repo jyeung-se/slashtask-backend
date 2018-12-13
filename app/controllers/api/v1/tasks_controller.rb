@@ -1,8 +1,8 @@
 class Api::V1::TasksController < ApplicationController
   before_action :set_task, only: [:show,:update,:destroy]
 
-  skip_before_action :authorized, only: [:create]
-  # skip_before_action :authorized, only: [:index, :create]
+  # skip_before_action :authorized, only: [:create]
+  skip_before_action :authorized, only: [:index, :create]
 
 
   def index
