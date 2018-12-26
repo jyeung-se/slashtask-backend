@@ -9,6 +9,13 @@ class Api::V1::TaskListsController < ApplicationController
   def create
     @task_list = TaskList.create(task_list_params)
     render json: @task_list, status: 201
+    # if @task_list.valid?
+    #   render json: @task_list, status: 201
+    # else
+    #   if params[:task_list][:list_title] == ''
+    #     render json: { errors: 'Tasklist title field must not be blank' }, status: :not_acceptable
+    #   end
+    # end
   end
 
   def update
