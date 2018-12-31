@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_10_18_235838) do
     t.string "title"
     t.string "description"
     t.boolean "slashed", default: false, null: false
+    t.integer "likes", default: 0
     t.integer "task_list_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -29,7 +29,7 @@ class Api::V1::TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:title, :description, :slashed, :task_list_id)
+    params.require(:task).permit(:title, :description, :slashed, :likes, :task_list_id)
   end
 
   def set_task
